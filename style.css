@@ -450,10 +450,12 @@ nav a:hover {
 
 .simple-history li {
     position: relative;
-    padding-left: 15px;
+    padding-left: 20px;
     margin-bottom: 5px;
     color: var(--text-main);
     font-weight: 500;
+    text-align: left;
+
 }
 
 .simple-history li::before {
@@ -792,6 +794,57 @@ footer {
 
 /* --- [모바일 반응형] --- */
 @media (max-width: 768px) {
+    section {
+        padding: 60px 0; /* 전체 패딩도 줄여줍니다. */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem; /* 4.5rem -> 2.5rem */
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        font-size: 1rem; /* 1.2rem -> 1rem */
+        margin-bottom: 30px; 
+    }
+
+    .section-title {
+        font-size: 2.2rem; /* 2.5rem -> 2.2rem */
+        margin-bottom: 5px;
+    }
+
+    /* --- About 섹션 --- */
+    .about-title {
+        font-size: 1.7rem; /* 2rem -> 1.7rem */
+    }
+
+    .about-content p {
+        font-size: 0.95rem; /* 1.05rem -> 0.95rem */
+        margin-bottom: 20px;
+    }
+    
+    /* --- 프로그램/시설 섹션 --- */
+    .card h3 {
+        font-size: 1.3rem; /* 1.5rem -> 1.3rem */
+    }
+    
+    /* --- 강사진 섹션 --- */
+    .profile-intro .name {
+        font-size: 1.8rem; /* 2rem -> 1.8rem */
+    }
+    
+    .profile-intro .kr-name {
+        font-size: 1.2rem; /* 1.4rem -> 1.2rem */
+    }
+
+    .detail-list li {
+        font-size: 0.9rem; /* 0.95rem -> 0.9rem */
+    }
+
+    /* --- 커리큘럼 노트 --- */
+    .note-text {
+        font-size: 0.9rem; /* 1.1rem -> 0.9rem */
+    }
     .mobile-menu-btn {
         display: block;
     }
