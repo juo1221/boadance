@@ -1,0 +1,247 @@
+@charset "UTF-8";
+
+/* --- [변수 설정] --- */
+:root {
+    --bg-color: #F9F7F2;       /* 메인 배경색: 크림 */
+    --card-bg: #FFFFFF;        /* 카드 배경색: 화이트 */
+    --text-main: #333333;      /* 메인 텍스트: 진한 회색 */
+    --text-sub: #666666;       /* 서브 텍스트: 중간 회색 */
+    --accent-color: #D4C4B7;   /* 포인트 컬러: 베이지 */
+    --btn-color: #6D5D52;      /* 버튼 컬러: 브라운 */
+    --btn-hover: #554840;      /* 버튼 호버 컬러 */
+}
+
+/* --- [기초 설정] --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    word-break: keep-all; /* 한글 단어 짤림 방지 */
+}
+
+/* 공통 레이아웃 */
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section { padding: 80px 0; }
+.bg-white { background-color: #fff; }
+
+/* --- [헤더 & 네비게이션] --- */
+header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 70px;
+    background-color: rgba(249, 247, 242, 0.95);
+    border-bottom: 1px solid #eee;
+    z-index: 1000;
+    display: flex;
+    justify-content: center; /* 가운데 정렬 보정 */
+}
+
+.header-inner {
+    width: 100%;
+    max-width: 1024px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+nav ul { display: flex; list-style: none; gap: 30px; }
+nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    transition: color 0.3s;
+    font-size: 1rem;
+}
+nav a:hover { color: var(--btn-color); }
+
+.mobile-menu-btn {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--text-main);
+}
+
+/* --- [메인 히어로 섹션] --- */
+.hero {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* 배경 이미지 URL은 실제 사용하실 이미지로 교체하세요 */
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+                url('https://images.unsplash.com/photo-1504609773096-104ff10cf639?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center/cover;
+    color: white;
+    margin-top: 70px; /* 헤더 높이만큼 띄움 */
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 10px rgba(0,0,0,0.4);
+}
+.hero p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+}
+
+/* --- [타이포그래피 & 섹션] --- */
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.section-desc {
+    text-align: center;
+    color: var(--text-sub);
+    margin-bottom: 50px;
+}
+
+/* --- [카드 그리드 & 디자인] --- */
+.grid-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #f0f0f0;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card h3 { font-size: 1.4rem; margin-bottom: 15px; color: var(--text-main); }
+.card p { color: var(--text-sub); font-size: 0.95rem; margin-bottom: 20px; }
+.card-details {
+    font-weight: 700;
+    color: var(--btn-color);
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+}
+
+.profile-card .role {
+    display: inline-block;
+    background: #eee;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.btn-small {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: var(--btn-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+.btn-small:hover { background-color: var(--btn-hover); }
+
+/* --- [시설 & 오시는 길] --- */
+.image-placeholder {
+    width: 100%;
+    height: 300px;
+    background-color: #eee;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+.facility-info { text-align: center; color: var(--text-sub); font-size: 1.1rem; }
+
+.location-wrapper {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.info-item { margin-bottom: 20px; display: flex; flex-direction: column; }
+.info-label { font-weight: 700; margin-bottom: 5px; color: var(--text-main); }
+.info-content { color: var(--text-sub); }
+.link-text { text-decoration: none; transition: color 0.2s; }
+.link-text:hover { color: var(--btn-color); text-decoration: underline; }
+
+.map-placeholder {
+    width: 100%;
+    height: 300px;
+    background: #f4f4f4;
+    margin-top: 30px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* --- [푸터] --- */
+footer {
+    background-color: #333;
+    color: #ccc;
+    padding: 50px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+.footer-info { margin-top: 10px; font-size: 0.8rem; color: #888; }
+
+/* --- [반응형: 모바일 최적화] --- */
+@media (max-width: 768px) {
+    .mobile-menu-btn { display: block; }
+    
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px; left: 0; right: 0;
+        background-color: var(--bg-color);
+        padding: 20px;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+    }
+    nav ul.active { display: flex; }
+    
+    .hero h1 { font-size: 2rem; }
+    .section-title { font-size: 1.5rem; }
+    .card { padding: 30px 20px; }
+    .location-wrapper { padding: 20px; }
+}
