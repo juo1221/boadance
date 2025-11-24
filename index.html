@@ -373,6 +373,10 @@
         document.querySelectorAll('.scroll-animate').forEach(el => {
             observer.observe(el);
         });
+        const menuList = document.getElementById('menuList');
+        menuList.addEventListener('click', () => {
+            menuList.classList.remove('active');
+        });
     </script>
 </body>
 
