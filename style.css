@@ -111,6 +111,13 @@ header {
     justify-content: space-between;
     height: 100%;
 }
+.header-inner-title {
+    display: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    letter-spacing: 2px;
+}
 
 .logo {
     background: url('./boa_photo/about/logo.jpg') no-repeat center/contain;
@@ -794,6 +801,13 @@ footer {
 
 /* --- [모바일 반응형] --- */
 @media (max-width: 768px) {
+    .header-inner-title {
+        display: block;
+    }
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
     section {
         padding: 60px 0; /* 전체 패딩도 줄여줍니다. */
     }
@@ -849,13 +863,37 @@ footer {
         display: block;
     }
 
-    nav ul {
+    nav {
+        position: absolute;
+        /* 절대 위치로 설정 */
+        top: 70px;
+        /* 헤더 높이(70px) 아래에서 시작 */
         left: 0;
         width: 100%;
-        text-align: center;
-        z-index: 999;
-        gap:20px;
+        z-index: 998;
+        /* ul(999)보다 살짝 낮게 */
     }
+
+    nav ul {
+        flex-direction: column;
+        /* position: absolute; 제거 (부모 nav에 적용됨) */
+        /* top: 70px; 제거 (부모 nav에 적용됨) */
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        padding: 30px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        display: none;
+        gap: 20px;
+        text-align: center;
+        border-top: 1px solid #eee;
+        z-index: 999;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
     /* 메뉴 항목 간격 조정 */
     nav a {
         padding: 10px 0;

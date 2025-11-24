@@ -29,6 +29,8 @@
 
         <div class="header-inner">
             <a href="#home" class="logo"></a>
+            <div class="header-inner-title">BOA_STUDIO</div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="메뉴 열기">☰</button>
             <nav>
                 <ul id="menuList">
                     <li><a href="#about">학원소개</a></li>
@@ -348,6 +350,12 @@
     </footer>
 
     <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menuList');
+            menu.classList.toggle('active');
+            console.log('Menu toggled');
+        }
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
