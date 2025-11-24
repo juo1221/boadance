@@ -617,9 +617,8 @@ nav a:hover {
 }
 
 #facility {
-    padding: 100px 0;
+    padding: 100px 0 50px 0;
 }
-
 .gallery-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -658,6 +657,8 @@ nav a:hover {
     font-size: 1.2rem;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
+
+
 
 /* --- Curriculum 섹션 추가 스타일 --- */
 .curriculum-note {
@@ -764,8 +765,7 @@ nav a:hover {
 }
 
 .social-icon {
-    width: 25px;
-    height: 25px;
+    height: 24px;
 }
 
 .contact-map {
@@ -849,37 +849,13 @@ footer {
         display: block;
     }
 
-    nav {
-        position: absolute;
-        /* 절대 위치로 설정 */
-        top: 70px;
-        /* 헤더 높이(70px) 아래에서 시작 */
-        left: 0;
-        width: 100%;
-        z-index: 998;
-        /* ul(999)보다 살짝 낮게 */
-    }
-
     nav ul {
-        flex-direction: column;
-        /* position: absolute; 제거 (부모 nav에 적용됨) */
-        /* top: 70px; 제거 (부모 nav에 적용됨) */
         left: 0;
         width: 100%;
-        background: var(--white);
-        padding: 30px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-        display: none;
-        gap: 20px;
         text-align: center;
-        border-top: 1px solid #eee;
         z-index: 999;
+        gap:20px;
     }
-
-    nav ul.active {
-        display: flex;
-    }
-
     /* 메뉴 항목 간격 조정 */
     nav a {
         padding: 10px 0;
